@@ -11,6 +11,8 @@ It was [Mark Otto's idea](https://github.com/mdo/config), originally.
 | `.bash-profile` | Customizes the Terminal.app prompt and echos the currently checked out Git branch. |
 | `.gitconfig` | Global Git configuration to specify my name and email, shortcuts, colors, and more. |
 | `.gitignore` | A genericish ignore file adapted from [twbs/bootstrap](https://github.com/twbs/bootstrap)'s. |
+| `.vimrc` | Adds some nice highlighting for authoring commit messages |
+| `defaults.sh` | Sets reasonable OS X defaults for some System Preferences, Finder, Safari etc. |
 | `Preferences.sublime-settings` | My Sublime Text 2 user preferences. |
 
 ## Checklist
