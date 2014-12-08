@@ -1,12 +1,14 @@
 [user]
-  name = Mark Otto
-  email = markdotto@gmail.com
+  name = Dan Charlesworth
+  email = dcharlesworth@me.com
 
 [alias]
-  co = checkout
-  ci = commit
-  st = status
-  br = branch
+   co = checkout
+   ci = commit
+   st = status
+   br = branch
+  plo = pull origin
+  pso = push origin
 
 [color]
     ui = auto
