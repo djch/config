@@ -9,6 +9,13 @@
    br = branch
   plo = pull origin
   pso = push origin
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
+
+[help]
+  autocorrect = 1
 
 [color]
     ui = auto
