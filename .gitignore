@@ -23,6 +23,10 @@
 *.sublime-workspace
 nbproject
 Thumbs.db
+*.pydevproject
+.metadata
+.gradle
+.loadpath
 
 # Folders to ignore
 bower_components
