@@ -3,7 +3,6 @@
   email = dcharlesworth@me.com
 
 [branch]
-  autosetupmerge = true
   autosetuprebase = always
 
 [alias]
