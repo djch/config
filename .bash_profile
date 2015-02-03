@@ -1,3 +1,21 @@
+export EDITOR=vim
+
+# Colours
+GREEN="\[\e[0;32m\]"
+BLUE="\[\e[0;34m\]"
+RED="\[\e[0;31m\]"
+BRED="\e[1;31m\]"
+YELLOW="\[\e[0;33m\]"
+WHITE="\e[0;37m\]"
+BWHITE="\e[1;37m\]"
+COLOREND="\[\e[00m\]"
+
+## Tell `ls` to be colourful
+export CLICOLOR=1
+
+## Tell `grep` to highlight matches
+export GREP_OPTIONS='--color=auto'
+
 # Get the Git branch
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
