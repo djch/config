@@ -39,7 +39,7 @@ alias fucking=sudo
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 
 ## Shortcuts
-alias ll='ls -la'
+alias ll='ls -lah --color --group-directories-first'
 alias editgit='atom ~/.gitconfig'
 alias editbash='subl ~/.bash_profile'
 alias resource='source ~/.bash_profile && echo "Done!"'
