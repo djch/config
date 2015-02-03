@@ -1,3 +1,5 @@
+> :warning: If you fork this repo or just copy-paste things **you need to change your `.gitconfig` name and email address!**
+
 # Config
 
 **Config** is a basic checklist I follow to set up a new Mac's development environment. It gets me up to speed with Git, Ruby, GitHub, Jekyll, and more so I can more quickly get back to coding.
@@ -53,6 +55,3 @@ import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4b
   - [Sass](http://sass-lang.com) package
 - Load user settings from [`Preferences.sublime-settings`](/master/Preferences.sublime-settings)
 
-## Use it yourself
-
-If you fork this repo or just copy-paste things you need **please be sure to change your `.gitconfig` name and email address!**
