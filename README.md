@@ -47,8 +47,11 @@ This was [Mark Otto's idea](https://github.com/mdo/config), originally.
 ### 5. Editor
 
 1. Download [Atom](https://atom.io).
+
 2. Install my precious add-ons and themes using the Atom Package Manager CLI.
+
    ```bash
    apm install --package-file atom-pkgs.txt
    ```
+   
 3. Copy [config.cson](https://raw.githubusercontent.com/djch/config/master/config.cson) to your user prefs (~/.atom/config.cson).
