@@ -1,0 +1,25 @@
+ core:
+    ignoredNames: [
+      ".git"
+      ".svn"
+      ".DS_Store"
+      "*.pyc"
+      "*.pyo"
+    ]
+    disabledPackages: [
+      "highlight-selected"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    showIndentGuide: true
+    tabLength: 4
+    softWrap: true
+      {}
+  "fuzzy-finder":
+    ignoredNames: [
+      "*.pyc"
+      "*.pyo"
+    ]
