@@ -11,10 +11,10 @@ This was [Mark Otto's idea](https://github.com/mdo/config), originally.
 | File | Description |
 | --- | --- |
 | `.bash-profile` | Customizes the Terminal.app prompt and echoes the checked out Git branch. |
-| `.gitconfig` | Global Git configuration to specify my name and email, shortcuts, colors, and more. |
+| `.gitconfig` | Global Git config with my name and email, shortcuts, colors, and more. |
 | `.gitignore` | A generic ignore file adapted from [twbs/bootstrap](https://github.com/twbs/bootstrap)'s. |
 | `.vimrc` | Adds some nice highlighting for authoring commit messages |
-| `defaults.sh` | Sets reasonable OS X defaults for some System Preferences, Finder, Safari etc. |
+| `defaults.sh` | Sets some OS X defaults for System Preferences, Finder, Safari etc. |
 | `config.cson` | My Atom editor preferences. |
 | `atom-pkgs.cson` | My Atom editor plug-ins and themes. |
 
