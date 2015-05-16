@@ -6,9 +6,6 @@
       "*.pyc"
       "*.pyo"
     ]
-    disabledPackages: [
-      "highlight-selected"
-    ]
     themes: [
       "atom-dark-ui"
       "one-dark-syntax"
