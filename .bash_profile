@@ -1,14 +1,5 @@
 export EDITOR=vim
-
-# Colours
-GREEN="\[\e[0;32m\]"
-BLUE="\[\e[0;34m\]"
-RED="\[\e[0;31m\]"
-BRED="\e[1;31m\]"
-YELLOW="\[\e[0;33m\]"
-WHITE="\e[0;37m\]"
-BWHITE="\e[1;37m\]"
-COLOREND="\[\e[00m\]"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 ## Tell `ls` to be colourful
 export CLICOLOR=1
@@ -22,18 +13,15 @@ parse_git_branch() {
 }
 
 # Custom bash prompt
-#
-# Includes custom character for the prompt, path, and Git branch name.
-#
-# Source: kirsle.net/wizards/ps1.html
 export PS1="\n\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
-
 export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
 
 # Aliases
 
 ## I'm serious
 alias fucking=sudo
+alias please=sudo
+alias npmsucks='rm -rvf node_modules/ && npm install'
 
 ## Tools
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
@@ -41,7 +29,7 @@ alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 ## Shortcuts
 alias ll='ls -lah --color --group-directories-first'
 alias editgit='atom ~/.gitconfig'
-alias editbash='subl ~/.bash_profile'
+alias editbash='atom ~/.bash_profile'
 alias resource='source ~/.bash_profile && echo "Done!"'
 alias vi=vim
 
