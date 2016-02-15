@@ -23,9 +23,6 @@ alias fucking=sudo
 alias please=sudo
 alias npmsucks='rm -rvf node_modules/ && npm install'
 
-## Tools
-alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-
 ## Shortcuts
 alias ll='ls -lah --color --group-directories-first'
 alias editgit='atom ~/.gitconfig'
@@ -48,4 +45,4 @@ alias recent='git for-each-ref --sort=-committerdate refs/heads/'
 alias branch_new="git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
 ## Mobile iOS testing
-alias ios='open /Applications/Xcode.app/Contents/Applications/iPhone\ Simulator.app'
+alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'

@@ -1,22 +1,78 @@
- core:
+"*":
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+    enableBuiltinProvider: false
+  "autocomplete-python":
+    addBracketAfterFunction: true
+    extraPaths: "$PROJECT/venv/lib/python2.7/site-packages"
+  core:
+    followSymlinks: true
     ignoredNames: [
       ".git"
       ".svn"
       ".DS_Store"
-      "*.pyc"
-      "*.pyo"
+      ".project"
+      ".pydevproject"
+      "*.py[cod]"
+      ".settings"
     ]
-    themes: [
-      "atom-dark-ui"
-      "one-dark-syntax"
-    ]
+    projectHome: "/Users/Dan/Sites/"
   editor:
+    backUpBeforeSaving: true
+    fontFamily: "Menlo"
+    invisibles: {}
+    lineHeight: 1.6
     showIndentGuide: true
     tabLength: 4
-    softWrap: true
-      {}
+  emmet: {}
+  "exception-reporting":
+    userId: "9159db90-d7a3-66fd-4502-6ccb71303b63"
   "fuzzy-finder":
     ignoredNames: [
       "*.pyc"
       "*.pyo"
     ]
+  "git-projects":
+    rootPath: "/Users/Dan/Sites"
+  "highlight-selected": {}
+  "less-than-slash": {}
+  linter:
+    lintOnChange: false
+    lintOnEditorFocus: false
+    lintOnFly: false
+    showErrorPanel: false
+    showErrorTabFile: false
+    showErrorTabProject: false
+    showInfoMessages: true
+    statusIconPosition: "Right"
+    statusIconScope: "File"
+  "linter-flake8":
+    configFileNames: [
+      "setup.cfg"
+    ]
+    executablePath: "/usr/local/bin/flake8"
+    ignoreErrorCodes: [
+      "E501"
+      "E128"
+      "E124"
+      "F403"
+      "E701"
+      "W503"
+      "E731"
+    ]
+    maxLineLength: 100
+  "linter-scss-lint":
+    disableWhenNoConfigFileInPath: true
+    executablePath: "/usr/local/bin/scss-lint"
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".django.html.text":
+  editor:
+    softWrapAtPreferredLineLength: false
+".gfm.source":
+  editor:
+    softWrapAtPreferredLineLength: true
