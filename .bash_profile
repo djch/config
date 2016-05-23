@@ -1,48 +1,50 @@
+# Shout out to https://github.com/mathiasbynens/dotfiles/
+
 export EDITOR=vim
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
-## Tell `ls` to be colourful
-export CLICOLOR=1
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
-## Tell `grep` to highlight matches
-export GREP_OPTIONS='--color=auto'
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
 
-# Get the Git branch
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend;
 
-# Custom bash prompt
-export PS1="\n\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(parse_git_branch) \[$(tput sgr0)\]"
-export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell;
 
-# Aliases
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+for option in autocd globstar; do
+	shopt -s "$option" 2> /dev/null;
+done;
 
-## I'm serious
-alias fucking=sudo
-alias please=sudo
-alias npmsucks='rm -rvf node_modules/ && npm install'
+# Add tab completion for many Bash commands
+if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+	source "$(brew --prefix)/share/bash-completion/bash_completion";
+elif [ -f /etc/bash_completion ]; then
+	source /etc/bash_completion;
+fi;
 
-## Shortcuts
-alias ll='ls -lah --color --group-directories-first'
-alias editgit='atom ~/.gitconfig'
-alias editbash='atom ~/.bash_profile'
-alias resource='source ~/.bash_profile && echo "Done!"'
-alias vi=vim
+# Enable tab completion for `g` by marking it as an alias for `git`
+if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+	complete -o default -o nospace -F _git g;
+fi;
 
-## Git commands
-alias log='git log'
-alias diff='git diff'
-alias branch='git branch'
-alias st='git status'
-alias fetch='git fetch'
-alias push='git push origin head'
-alias pull='git pull'
-alias fp='fetch && pull'
-alias gmm='git merge master'
-alias gmghp='git merge gh-pages'
-alias recent='git for-each-ref --sort=-committerdate refs/heads/'
-alias branch_new="git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)'"
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-## Mobile iOS testing
-alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
+# Add tab completion for `defaults read|write NSGlobalDomain`
+# You could just use `-g` instead, but I like being explicit
+complete -W "NSGlobalDomain" defaults;
+
+# Add `killall` tab completion for common apps
+complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
